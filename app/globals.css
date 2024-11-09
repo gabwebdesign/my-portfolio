@@ -9,6 +9,7 @@
   --foreground: #171717;
   --blue:#3947C3;
   --orange:#FF6666;
+  --gray:#EAE9E9;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -25,19 +26,22 @@ body {
   font-optical-sizing: auto;
 }
 
-h1{
+h1,h2{
   font-size: 4rem;
   line-height: 5rem;
+  color: var(--blue);
   @media screen and (max-width: 768px){
     font-size: 3rem;
     line-height: 4rem;
   }
 }
 
+
 blockquote{
   font-size: 3.75rem;
   line-height: 4.5rem;
   font-weight: 300;
+  color: var(--background);
 
   @media screen and (max-width: 992px){
     font-size: 2.75rem;

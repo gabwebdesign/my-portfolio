@@ -1,5 +1,6 @@
 import './experience.css';
-import Job, { JobsProps } from './jobs/jobs';
+import Job, { JobsProps } from './jobs/Jobs';
+
 
 export default function Experience() {
 
@@ -46,8 +47,15 @@ export default function Experience() {
                         />
                     ))}
                 </div>
-                <div className="bg-blue">
-                    BeyondSoft
+                <div className='work'>
+                    <h3 className='mb-3'>Last Job</h3>
+                    <div className='boxes grid gap-2'>
+                        <div className='bg-blue box1'>One</div>
+                        <div className='bg-blue box2'>Two</div>
+                        <div className='bg-blue'>Three</div>
+                        <div className='bg-blue'>Four</div>
+                        <div className='bg-blue'>Five</div>
+                    </div>
                 </div>
             </div>
             

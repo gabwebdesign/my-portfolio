@@ -1,0 +1,17 @@
+.jobs{
+    color:var(--background);
+
+    .date{
+        font-size: .9rem;
+    }
+    .company{
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+
+    .role{
+        font-size: 1.3rem;
+        font-weight: 500;
+    }
+}
+

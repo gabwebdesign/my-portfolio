@@ -1,4 +1,50 @@
 .experience-content{
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+
+    @media screen and (min-width: 768px){
+        grid-template-columns: 1fr 2fr;        
+    }
+
+    .work{
+        color: var(--background);
+
+        .boxes{
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-auto-rows: 15rem;
+            
+            div{
+                border-radius: .5rem;
+            }
+
+            @media screen and (min-width: 768px){
+                grid-template-columns: repeat(3, 1fr);
+                grid-auto-rows: 10rem;
+            }
+        }
+
+        .box1 {
+
+            @media screen and (min-width: 768px){
+                grid-column-start: 1;
+                grid-column-end: 4;
+                grid-row-start: 1;
+                grid-row-end: 3;   
+            }
+            
+          }
+
+        .box2 {
+            @media screen and (min-width: 768px){
+                grid-column-start: 1;
+                grid-row-start: 3;
+                grid-row-end: 5;
+            }
+        }
+        
+    }
 }
+
+

@@ -1,3 +1,5 @@
+import './jobs.css';
+
 export type JobsProps = {
     company: string;
     role: string;
@@ -9,15 +11,15 @@ export type JobsProps = {
 
 export default function Job({ company, role, dateStart, dateEnd, location, description }: JobsProps) {
     return (
-            <div className="jobs">
-                <div>
+            <div className="jobs mb-10">
+                <div className='date mb-2'>
+                    {dateStart} - {dateEnd}
+                </div>
+                <div className='company'>
                     {company}
                 </div>
-                <div>
+                <div className='role'>
                     {role}
-                </div>
-                <div>
-                    {dateStart} - {dateEnd}
                 </div>
                 <div>
                     {location}

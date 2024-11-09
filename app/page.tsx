@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Skills from "./components/skills/skills";
 import Experience from "./components/experience/experience";
+import Contact from "./components/contact/contact";
 
 export default function Home() {
   return (
@@ -26,6 +27,7 @@ export default function Home() {
       </section>
       <Skills />
       <Experience />
+      <Contact />
     </div>
   );
 }

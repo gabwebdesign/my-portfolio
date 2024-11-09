@@ -12,9 +12,9 @@ export default function Skills() {
             </div>
             <div className='content-text flex flex-col-reverse md:flex-row justify-between'>
                 <div className='skills-and-description flex justify-between flex-col'>
-                    <p className='description'>Highly skilled Front-End Developer with over 10 years of experience building web applications and interactive experiences. Proven ability to collaborate effectively with designers and back-end developers to deliver high-quality, user-friendly solutions. Adept in modern front-end technologies.</p>
+                    <p className='description text-background'>Highly skilled Front-End Developer with over 10 years of experience building web applications and interactive experiences. Proven ability to collaborate effectively with designers and back-end developers to deliver high-quality, user-friendly solutions. Adept in modern front-end technologies.</p>
                     <div className='skills'>
-                        <p>JavaScript, TypeScript, Apex, Python, C#, SOQL, React, Angular, Next.js, SPA, Bootstrap, Tailwind CSS, GSAP Animation, LLM, Langchain.</p>
+                        <p className="text-background md:text-blue">JavaScript, TypeScript, Apex, Python, C#, SOQL, React, Angular, Next.js, SPA, Bootstrap, Tailwind CSS, GSAP Animation, LLM, Langchain.</p>
                     </div>
                 </div>
                 <div className='profile-img'>
