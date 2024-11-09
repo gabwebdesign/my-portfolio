@@ -1,0 +1,42 @@
+.skills-and-description {
+    max-width: 30rem;
+    gap:3.3rem;
+
+    @media screen and (min-width: 768px){
+        gap: 5.3rem;
+    }
+
+    .skills{
+        font-size: 1.5rem;
+        color: var(--foreground);
+        @media screen and (min-width: 768px){
+            color: var(--blue);
+        }
+    }
+
+    .description{
+        font-size: .75rem;
+    }
+}
+
+.bg-effect{
+    @media screen and (min-width: 768px){
+        background-image: url('/rectangle.png');
+        background-position: bottom;
+        background-repeat: repeat-x;
+        background-size: auto;
+    }
+}
+
+.profile-img{
+    width: 13rem;
+    height: 14.75;
+    object-fit: cover;
+
+    @media screen and (max-width: 768px){
+        width: 10rem;
+        height: 11.75rem; 
+        margin: 3rem 0 3rem 0;
+    }
+}
+

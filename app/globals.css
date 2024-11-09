@@ -1,10 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&family=Roboto:wght@300;400;500&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
-  --background: #ffffff;
+  --background: #FCFBFB;
   --foreground: #171717;
+  --blue:#3947C3;
+  --orange:#FF6666;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,5 +21,70 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Alexandria", sans-serif;
+  font-optical-sizing: auto;
+}
+
+h1{
+  font-size: 4rem;
+  line-height: 5rem;
+  @media screen and (max-width: 768px){
+    font-size: 3rem;
+    line-height: 4rem;
+  }
+}
+
+blockquote{
+  font-size: 3.75rem;
+  line-height: 4.5rem;
+  font-weight: 300;
+
+  @media screen and (max-width: 992px){
+    font-size: 2.75rem;
+    line-height: 3rem;
+  }
+
+  cite{
+    font-size: 1rem;
+    font-weight: 500;
+  }
+}
+
+.wrapper{
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+section {
+  padding: 4rem;
+  width: 100%;
+  /* Fallback for older iOS versions */
+  min-height: -webkit-fill-available; 
+  min-height: 100vh;
+  
+
+  @media screen and (max-width: 992px){
+    padding: 2rem;
+  }
+}
+
+.btn{
+  &.primary{
+    background: var(--blue);
+    color: var(--background);
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.25rem;
+    font-weight: 500;
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    &:hover{
+      background: #2c3da5;
+    }
+  }
+}
+
+.img-fluid{
+  max-width: 100%;
+  height: auto;
 }
