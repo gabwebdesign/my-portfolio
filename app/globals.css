@@ -30,7 +30,7 @@ body.no-scroll {
   overflow: hidden;
 }
 
-h1,h2{
+h1,h2,.heading1,.heading2{
   font-size: 4rem;
   line-height: 5rem;
   color: var(--blue);
@@ -40,6 +40,9 @@ h1,h2{
   }
 }
 
+.h-90{
+  height: 90vh;
+}
 
 blockquote{
   font-size: 3.75rem;

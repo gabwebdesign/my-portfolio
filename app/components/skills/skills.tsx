@@ -1,11 +1,39 @@
+'use client';
 import Image from "next/image";
 import './skills.css';
 
+import gsap from 'gsap';
+import { useEffect } from "react";
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
 export default function Skills() {
+
+    useEffect(() => {
+
+        let tl = gsap.timeline({ease: "none"});
+
+        tl
+        .from(".quote",{filter: "blur(20px)", x:-50,opacity:0})
+        .to(".profile-img",{filter: "blur(20px)",skewX:'-20deg',rotateX:'300deg',scale:.2,y:-50,opacity:1})
+        .to(".profile-img",{filter: "blur(0)",y:-30,skewX:0,rotateX:0,scale:1})
+        .from(".description",{x:-50,opacity:0})
+        .from(".skills",{x:-50,opacity:0})
+
+        ScrollTrigger.create({
+            trigger: "#skill-set",
+            pin: true,
+            start: "-=10%",
+            end: "+=60%",
+            animation: tl,
+            scrub: true,
+            //markers: true
+        })
+    },[]);
+
   return (
-      <section className="bg-blue bg-effect">
-        <div className="flex flex-col justify-between h-full">
-            <div>
+      <section className="bg-blue bg-effect" id="skills">
+        <div className="flex flex-col justify-between h-full" id="skill-set">
+            <div className="quote">
                 <blockquote>A person who never made a<br className="hidden lg:block" /> mistake, has never tried<br className="hidden lg:block" /> something new. 
                     <cite className="author"> ALBERT EINSTEN</cite>
                 </blockquote>

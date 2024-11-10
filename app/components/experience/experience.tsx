@@ -6,16 +6,34 @@ import './experience.css';
 import Job, { JobsProps } from './jobs/Jobs';
 import Work, { WorksProps } from './works/works';
 
+import gsap from 'gsap';
+import { useEffect } from "react";
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 export default function Experience() {
 
     const [currentWork, setCurrentWork] = React.useState<WorksProps | null>(null);
     const [modalOpen, setModalOpen] = React.useState(false);
 
-    const handleModal = (value:boolean) => {
-        console.log(value);
-        setModalOpen(!modalOpen);
-    }
+    useEffect(() => {
+
+        let tl = gsap.timeline({ease: "none"});
+        /** 
+        tl
+        .from(".job", { opacity: 0, stagger: 0.5 })
+        .from(".work", { opacity: 0, y: 100, stagger: 0.5})
+
+        ScrollTrigger.create({
+            trigger: ".experience-content",
+            pin: true,
+            start: "-=10%",
+            end: "+=60%",
+            animation: tl,
+            scrub: true,
+            //markers: true
+        })
+            **/
+    },[]);
 
     const jobs: JobsProps[] = [
         {
@@ -74,33 +92,37 @@ export default function Experience() {
             <div className="experience-content">
                 <div>
                     {jobs.map((job, index) => (
-                        <Job
-                            key={index}
-                            company={job.company}
-                            role={job.role}
-                            dateStart={job.dateStart}
-                            dateEnd={job.dateEnd}
-                            location={job.location}
-                            description={job.description}
-                        />
+                        <div className='job' key={index}>
+                            <Job
+                                
+                                company={job.company}
+                                role={job.role}
+                                dateStart={job.dateStart}
+                                dateEnd={job.dateEnd}
+                                location={job.location}
+                                description={job.description}
+                            />
+                        </div>
+                        
                     ))}
                 </div>
                 <div className='work'>
                     <h3 className='mb-3 text-background'>Works</h3>
                     <div className='boxes flex gap-2'>
                         { works.map((work, index) => (
-                            <Work
-                                key={index}
-                                id={work.id}
-                                title={work.title}
-                                industries={work.industries}
-                                duration={work.duration}
-                                technologies={work.technologies}
-                                description={work.description}
-                                alt={work.alt}
-                                thumb={work.thumb}
-                                large={work.large}
-                            />                    
+                            <div className='work' key={index}>
+                                <Work
+                                    id={work.id}
+                                    title={work.title}
+                                    industries={work.industries}
+                                    duration={work.duration}
+                                    technologies={work.technologies}
+                                    description={work.description}
+                                    alt={work.alt}
+                                    thumb={work.thumb}
+                                    large={work.large}
+                                /> 
+                            </div>                   
                         ))}
                     </div>
                 </div>

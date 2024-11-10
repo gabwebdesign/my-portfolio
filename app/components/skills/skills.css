@@ -32,7 +32,7 @@
     width: 13rem;
     height: 14.75;
     object-fit: cover;
-
+    opacity: 0;
     @media screen and (max-width: 768px){
         width: 10rem;
         height: 11.75rem; 
