@@ -1,5 +1,8 @@
+/* eslint-disable @next/next/no-img-element */
+import CustomModal from '../custom-modal/custom-modal';
 import './experience.css';
 import Job, { JobsProps } from './jobs/Jobs';
+import Work, { WorksProps } from './works/works';
 
 
 export default function Experience() {
@@ -31,6 +34,31 @@ export default function Experience() {
         }
     ];
 
+    const works: WorksProps[] = [        
+        {
+            id: '1',
+            title: 'Quierolote Platform',
+            industries: 'E-commerce',
+            duration: '2020 - Present',
+            technologies: 'React, TypeScript, Next.js, Tailwind CSS',
+            description: 'Developed and maintained web applications for clients in the automotive industry. Worked with a team of developers to deliver high-quality, user-friendly solutions.',
+            alt: 'quierolote development image',
+            thumb: '/works/work1_thumb.png',
+            large: '/works/work1_large.png'
+        },
+        {
+            id: '2',
+            title: 'Cafe Angelina',
+            industries: 'Landing Page and E-commerce',
+            duration: '2020 - Present',
+            technologies: 'React, TypeScript, Next.js, Tailwind CSS',
+            description: 'Developed and maintained web applications for clients in the automotive industry. Worked with a team of developers to deliver high-quality, user-friendly solutions.',
+            alt: 'quierolote development image',
+            thumb: '/works/work2_thumb.png',
+            large: '/works/work2_large.png'
+        }
+    ]
+
     return(
         <section className="bg-orange">
             <div className="experience-content">
@@ -48,13 +76,22 @@ export default function Experience() {
                     ))}
                 </div>
                 <div className='work'>
-                    <h3 className='mb-3'>Last Job</h3>
-                    <div className='boxes grid gap-2'>
-                        <div className='bg-blue box1'>One</div>
-                        <div className='bg-blue box2'>Two</div>
-                        <div className='bg-blue'>Three</div>
-                        <div className='bg-blue'>Four</div>
-                        <div className='bg-blue'>Five</div>
+                    <h3 className='mb-3 text-background'>Works</h3>
+                    <div className='boxes flex gap-2'>
+                        { works.map((work, index) => (
+                            <Work
+                                key={index}
+                                id={work.id}
+                                title={work.title}
+                                industries={work.industries}
+                                duration={work.duration}
+                                technologies={work.technologies}
+                                description={work.description}
+                                alt={work.alt}
+                                thumb={work.thumb}
+                                large={work.large}
+                            />                       
+                        ))}
                     </div>
                 </div>
             </div>
