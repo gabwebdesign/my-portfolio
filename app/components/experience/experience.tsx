@@ -1,4 +1,6 @@
+"use client";
 /* eslint-disable @next/next/no-img-element */
+import React from 'react';
 import CustomModal from '../custom-modal/custom-modal';
 import './experience.css';
 import Job, { JobsProps } from './jobs/Jobs';
@@ -6,6 +8,14 @@ import Work, { WorksProps } from './works/works';
 
 
 export default function Experience() {
+
+    const [currentWork, setCurrentWork] = React.useState<WorksProps | null>(null);
+    const [modalOpen, setModalOpen] = React.useState(false);
+
+    const handleModal = (value:boolean) => {
+        console.log(value);
+        setModalOpen(!modalOpen);
+    }
 
     const jobs: JobsProps[] = [
         {
@@ -90,12 +100,25 @@ export default function Experience() {
                                 alt={work.alt}
                                 thumb={work.thumb}
                                 large={work.large}
-                            />                       
+                                AuxEvent={setModalOpen}
+                            />                    
                         ))}
                     </div>
                 </div>
             </div>
-            
+            {
+                modalOpen && currentWork && (
+                    <CustomModal 
+                        title={currentWork.title}
+                        industries={currentWork.industries}
+                        duration={currentWork.duration}
+                        technologies={currentWork.technologies}
+                        description={currentWork.description}
+                        alt={currentWork.alt}
+                        large={currentWork.large}
+                    />
+                )
+            }
         </section>
     );
 }
