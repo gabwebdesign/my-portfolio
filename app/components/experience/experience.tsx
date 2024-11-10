@@ -54,7 +54,7 @@ export default function Experience() {
             description: 'Developed and maintained web applications for clients in the automotive industry. Worked with a team of developers to deliver high-quality, user-friendly solutions.',
             alt: 'quierolote development image',
             thumb: '/works/work1_thumb.png',
-            large: '/works/work1_large.png'
+            large: '/works/work1_large.webp'
         },
         {
             id: '2',
@@ -65,7 +65,7 @@ export default function Experience() {
             description: 'Developed and maintained web applications for clients in the automotive industry. Worked with a team of developers to deliver high-quality, user-friendly solutions.',
             alt: 'quierolote development image',
             thumb: '/works/work2_thumb.png',
-            large: '/works/work2_large.png'
+            large: '/works/work2_large.webp'
         }
     ]
 
@@ -100,25 +100,11 @@ export default function Experience() {
                                 alt={work.alt}
                                 thumb={work.thumb}
                                 large={work.large}
-                                AuxEvent={setModalOpen}
                             />                    
                         ))}
                     </div>
                 </div>
             </div>
-            {
-                modalOpen && currentWork && (
-                    <CustomModal 
-                        title={currentWork.title}
-                        industries={currentWork.industries}
-                        duration={currentWork.duration}
-                        technologies={currentWork.technologies}
-                        description={currentWork.description}
-                        alt={currentWork.alt}
-                        large={currentWork.large}
-                    />
-                )
-            }
         </section>
     );
 }

@@ -26,6 +26,10 @@ body {
   font-optical-sizing: auto;
 }
 
+body.no-scroll {
+  overflow: hidden;
+}
+
 h1,h2{
   font-size: 4rem;
   line-height: 5rem;

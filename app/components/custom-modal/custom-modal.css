@@ -3,6 +3,8 @@
     top: 0;
     left: 0;
     background: linear-gradient(0deg, rgb(229 229 236 / 50%) 0%, rgb(176 176 181 / 82%) 100%);
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
 
     @media screen and (min-width: 768px){
         width: 100vw;
@@ -16,5 +18,11 @@
             overflow-y: scroll;
             height: 600px;
         }
+    }
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
     }
 }

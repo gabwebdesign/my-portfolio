@@ -1,6 +1,7 @@
 'use strict';
 import React from 'react';
 import './works.css';
+import CustomModal from '../../custom-modal/custom-modal';
 
 export type WorksProps = {
     id: string;
@@ -12,10 +13,9 @@ export type WorksProps = {
     alt:string;
     thumb:string;
     large:string;
-    AuxEvent:Function;
 }
 
-export default function Work({ id, title, industries, duration, technologies, description, thumb, large, alt, AuxEvent}: WorksProps) {
+export default function Work({ id, title, industries, duration, technologies, description, thumb, large, alt}: WorksProps) {
     
     const [modalOpen, setModalOpen] = React.useState(false);
     
@@ -26,10 +26,23 @@ export default function Work({ id, title, industries, duration, technologies, de
                     className="img-fluid cursor-pointer"
                     src={thumb}
                     alt={alt}
-                    onClick={() => { AuxEvent( setModalOpen(!modalOpen) )}}
+                    onClick={() => setModalOpen(true)}
                 ></img>
             </div>
             <p className='font-bold text-center text-background'>{title}</p>
+
+            <CustomModal
+                isOpen={modalOpen}
+                onClose={() => setModalOpen(false)}
+                title={title}
+                description={description}
+                large={large}
+                alt={alt}
+                industries={industries}
+                technologies={technologies}
+                duration={duration}
+            />
+
         </div>
     );
 }

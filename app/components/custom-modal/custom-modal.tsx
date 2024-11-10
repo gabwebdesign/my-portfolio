@@ -1,6 +1,9 @@
+import { useEffect } from 'react';
 import './custom-modal.css';
 
 export type CustomModalProps = {
+    isOpen: boolean;
+    onClose: () => void;
     title: string;
     duration: string;
     industries: string;
@@ -10,11 +13,25 @@ export type CustomModalProps = {
     large:string;
 }
 
-export default function CustomModal({title,industries,technologies,description,alt,large,duration}: CustomModalProps) {
+export default function CustomModal({isOpen, onClose,title,industries,technologies,description,alt,large,duration}: CustomModalProps) {
+    useEffect(() => {
+        if (isOpen) {
+            document.body.classList.add('no-scroll');
+        } else {
+            document.body.classList.remove('no-scroll');
+        }
+
+        return () => {
+            document.body.classList.remove('no-scroll');
+        };
+    }, [isOpen]);
+    
+    if (!isOpen) return null;
+    
     return (
         <div className="modal p-4 md:p-10 flex justify-center mb-5">
             <div className="modal-content bg-background p-4 md:p-10 rounded-lg">
-                <div className='flex justify-end mb-6'><span className="close text-3xl cursor-pointer">&times;</span></div>
+                <div className='flex justify-end mb-6' onClick={onClose}><span className="close text-3xl cursor-pointer">&times;</span></div>
                 <div className='content p-6'>
                     <p className='text-3xl mb-5'>{title}</p>
                     <p className='mb-8'>{description}</p>
