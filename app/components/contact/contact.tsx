@@ -5,40 +5,45 @@ import { useEffect } from "react";
 
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { MotionPathPlugin  } from 'gsap/MotionPathPlugin';
 
 export default function Contact() {
 
     gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(MotionPathPlugin);
 
     useEffect(() => {
 
         let tl = gsap.timeline({ease: "none"});
         
         tl
-        .from(".contact-header", { opacity:0, y:-100 })
+        .from(".contact-section", { opacity:0})
+        .from(".contact-header", { opacity:0, scale:.3 ,ease: "back.inOut",
+        })
+        
 
         ScrollTrigger.create({
             trigger: ".contact",
-            pin: true,
-            start: "-=10%",
-            end: "+=60%",
+            //pin: true,
+            start: "-=50%",
+            end: "+=10%",
             animation: tl,
-            scrub: true,
+            //scrub: true,
             //markers: true
         })
     },[]);
 
 
     return (
-        <section className="bg-gray flex flex-col justify-between">
-            <div className="contact">
+        <section className="contact-section bg-gray flex flex-col justify-between" id="contact">
+            <div className="contact flex flex-col justify-between h-full">
                 <nav>
                     <ul className="flex justify-between">
                     <li className="navbrand">
                         GAB
                     </li>
                     <li>
-                        <Link href="/fullstack_gabriel_aguilar.pdf" className="btn primary">RESUME</Link>
+                        <Link href="/fullstack.pdf" className="btn primary">RESUME</Link>
                     </li>
                     </ul>
                 </nav>
