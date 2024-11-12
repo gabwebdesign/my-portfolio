@@ -1,10 +1,12 @@
 .introducting {
-  background: linear-gradient(328deg, rgba(255,255,255,1) 0%, rgba(255,102,102,0.3071822478991597) 50%);;
+    background: linear-gradient(328deg, rgba(255,102,102,0.01) 0%, rgba(255,102,102,0.2) 30%, rgba(255,102,102,0.15) 80%);
 }
+
+
 
 .header{
     width: 80%;
     @media screen and (min-width: 768px){
-        width: 65%;
+        width: 55%;
     }
 }

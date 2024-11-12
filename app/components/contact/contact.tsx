@@ -14,28 +14,27 @@ export default function Contact() {
 
     useEffect(() => {
 
-        let tl = gsap.timeline({ease: "none"});
+        let tl = gsap.timeline();
         
         tl
         .from(".contact-section", { opacity:0})
-        .from(".contact-header", { opacity:0, scale:.3 ,ease: "back.inOut",
-        })
+        .from(".contact-header", { opacity:1, y:500, ease: "power4.inOut",duration:2},2)
         
 
         ScrollTrigger.create({
             trigger: ".contact",
             //pin: true,
-            start: "-=50%",
-            end: "+=10%",
+            start: "-=70%",
+            end: "+=50%",
             animation: tl,
-            //scrub: true,
+            scrub: true,
             //markers: true
         })
     },[]);
 
 
     return (
-        <section className="contact-section bg-gray flex flex-col justify-between" id="contact">
+        <section className="contact-section bg-gray flex flex-col justify-between overflow-hidden" id="contact">
             <div className="contact flex flex-col justify-between h-full">
                 <nav>
                     <ul className="flex justify-between">
@@ -55,7 +54,7 @@ export default function Contact() {
                         <ul>
                             <li className="mb-3">
                             <p className="font-bold">Address</p> 
-                            <p>Condominio Rosedal 1, San Francisco, Heredia, Costa Rica.</p>
+                            <p>San Francisco, Heredia, Costa Rica.</p>
                             </li>
                             <li className="mb-3">
                                 <p className="font-bold">Phone</p>

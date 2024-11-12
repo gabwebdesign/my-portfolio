@@ -8,7 +8,7 @@ import Introducing from "./components/introducing/introducing";
 
 export default function Home() {
   return (
-    <div className="grid wrapper">
+    <div className="grid wrapper overflow-hidden">
       <Introducing />
       <Skills />
       <Experience />
