@@ -6,8 +6,6 @@ import { useEffect } from "react";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
 
-
-
 export default function Introducing() {
 
     gsap.registerPlugin(ScrollTrigger);

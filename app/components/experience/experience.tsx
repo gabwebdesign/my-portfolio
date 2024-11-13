@@ -5,14 +5,7 @@ import './experience.css';
 import Job, { JobsProps } from './jobs/Jobs';
 import Work, { WorksProps } from './works/works';
 
-import gsap from 'gsap';
-import { useEffect } from "react";
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
 export default function Experience() {
-
-    const [currentWork, setCurrentWork] = React.useState<WorksProps | null>(null);
-    const [modalOpen, setModalOpen] = React.useState(false);
 
     const jobs: JobsProps[] = [
         {
