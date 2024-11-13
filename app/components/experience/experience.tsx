@@ -15,26 +15,6 @@ export default function Experience() {
     const [currentWork, setCurrentWork] = React.useState<WorksProps | null>(null);
     const [modalOpen, setModalOpen] = React.useState(false);
 
-    useEffect(() => {
-
-        let tl = gsap.timeline({ease: "none"});
-        /** 
-        tl
-        .from(".job", { opacity: 0, stagger: 0.5 })
-        .from(".work", { opacity: 0, y: 100, stagger: 0.5})
-
-        ScrollTrigger.create({
-            trigger: ".experience-content",
-            pin: true,
-            start: "-=10%",
-            end: "+=60%",
-            animation: tl,
-            scrub: true,
-            //markers: true
-        })
-            **/
-    },[]);
-
     const jobs: JobsProps[] = [
         {
             company: 'BeyondSoft',

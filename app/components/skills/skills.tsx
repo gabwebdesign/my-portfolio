@@ -21,14 +21,42 @@ export default function Skills() {
         .from(".skills",{x:-50,opacity:0})
 
         ScrollTrigger.create({
-            trigger: "#skill-set",
-            pin: true,
+            trigger: "#skills",
+            pin: '#skill-set',
             start: "-=30%",
             end: "+=60%",
             animation: tl,
             scrub: true,
             //markers: true
         })
+
+        ScrollTrigger.matchMedia({
+            // Desktop
+            "(min-width: 768px)": function() {
+                ScrollTrigger.create({
+                    trigger: "#skills",
+                    pin: '#skill-set',
+                    start: "-=30%",
+                    end: "+=60%",
+                    animation: tl,
+                    scrub: true,
+                    //markers: true
+                });
+            },
+            // Mobile
+            "(max-width: 767px)": function() {
+                ScrollTrigger.create({
+                    trigger: "#skills",
+                    pin: '#skill-set',
+                    start: "top top",
+                    end: "+=60%",
+                    animation: tl,
+                    scrub: true,
+                    //markers: true
+                });
+            }
+        });
+
     },[]);
 
   return (
