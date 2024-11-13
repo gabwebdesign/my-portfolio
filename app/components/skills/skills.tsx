@@ -78,7 +78,7 @@ export default function Skills() {
                 <div className='profile-img'>
                     <Image
                         className="rounded-md img-fluid"
-                        src="/profile2.png"
+                        src="/images/profile2.png"
                         alt="profile image"
                         width={208}
                         height={236}
