@@ -1,4 +1,9 @@
 .works{
     border: 1px solid var(--background);
-    width: 364px;
+    width: 100%;
+
+    @media screen and (min-width: 768px){
+        width: 22.75rem;
+        
+    }
 }

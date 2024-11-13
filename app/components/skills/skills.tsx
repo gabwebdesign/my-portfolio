@@ -10,52 +10,53 @@ export default function Skills() {
 
     useEffect(() => {
 
-        let tl = gsap.timeline({ease: "none"});
+        const mm = gsap.matchMedia();
 
-        tl
-        .from("#skills",{opacity:0})
-        .from(".quote",{filter: "blur(20px)", x:-50,opacity:0})
-        .to(".profile-img",{filter: "blur(20px)",skewX:'-20deg',rotateX:'300deg',scale:.2,y:-50,opacity:1})
-        .to(".profile-img",{filter: "blur(0)",y:-30,skewX:0,rotateX:0,scale:1})
-        .from(".description",{x:-50,opacity:0})
-        .from(".skills",{x:-50,opacity:0})
+        mm.add("(min-width: 992px)", () => {
 
-        ScrollTrigger.create({
-            trigger: "#skills",
-            pin: '#skill-set',
-            start: "-=30%",
-            end: "+=60%",
-            animation: tl,
-            scrub: true,
-            //markers: true
-        })
+            let tl = gsap.timeline({ease: "none"});
 
-        ScrollTrigger.matchMedia({
-            // Desktop
-            "(min-width: 768px)": function() {
-                ScrollTrigger.create({
-                    trigger: "#skills",
-                    pin: '#skill-set',
-                    start: "-=30%",
-                    end: "+=60%",
-                    animation: tl,
-                    scrub: true,
-                    //markers: true
-                });
-            },
-            // Mobile
-            "(max-width: 767px)": function() {
-                ScrollTrigger.create({
-                    trigger: "#skills",
-                    pin: '#skill-set',
-                    start: "top top",
-                    end: "+=60%",
-                    animation: tl,
-                    scrub: true,
-                    //markers: true
-                });
-            }
-        });
+            tl
+            .from("#skills",{opacity:0})
+            .from(".quote",{filter: "blur(20px)", x:-50,opacity:0})
+            .to(".profile-img",{filter: "blur(20px)",skewX:'-20deg',rotateX:'300deg',scale:.2,y:-50,opacity:1})
+            .to(".profile-img",{filter: "blur(0)",y:-30,skewX:0,rotateX:0,scale:1})
+            .from(".description",{x:-50,opacity:0})
+            .from(".skills",{x:-50,opacity:0})
+
+            ScrollTrigger.create({
+                trigger: "#skill-set",
+                pin: true,
+                start: "-=30%",
+                end: "+=250%",
+                animation: tl,
+                scrub: true,
+                //markers: true
+            });
+          });
+
+          mm.add("(max-width: 991px)", () => {
+
+            let tl = gsap.timeline({ease: "none"});
+
+            tl
+            .from("#skills",{opacity:0})
+            .from(".quote",{filter: "blur(20px)", x:-50,opacity:0})
+            .to(".profile-img",{filter: "blur(20px)",skewX:'-20deg',rotateX:'300deg',scale:.2,y:-50,opacity:1})
+            .to(".profile-img",{filter: "blur(0)",y:-30,skewX:0,rotateX:0,scale:1})
+            .from(".description",{x:-50,opacity:0})
+            .from(".skills",{x:-50,opacity:0})
+
+            ScrollTrigger.create({
+                trigger: "#skills",
+                start: "-=30%",
+                end: "+=80%",
+                animation: tl,
+                scrub: 1,
+                //markers: true
+            });
+          });
+
 
     },[]);
 
