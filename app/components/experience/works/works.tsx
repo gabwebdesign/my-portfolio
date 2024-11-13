@@ -2,7 +2,6 @@
 import React from 'react';
 import './works.css';
 import CustomModal from '../../custom-modal/custom-modal';
-import { url } from 'inspector';
 
 export type WorksProps = {
     title: string;
