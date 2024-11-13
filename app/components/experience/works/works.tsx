@@ -2,6 +2,7 @@
 import React from 'react';
 import './works.css';
 import CustomModal from '../../custom-modal/custom-modal';
+import { url } from 'inspector';
 
 export type WorksProps = {
     title: string;
@@ -12,9 +13,10 @@ export type WorksProps = {
     alt:string;
     thumb:string;
     large:string;
+    url?:string;
 }
 
-export default function Work({ title, industries, duration, technologies, description, thumb, large, alt}: WorksProps) {
+export default function Work({ title, industries, duration, technologies, description, thumb, large, alt,url}: WorksProps) {
     
     const [modalOpen, setModalOpen] = React.useState(false);
     
@@ -40,6 +42,7 @@ export default function Work({ title, industries, duration, technologies, descri
                 industries={industries}
                 technologies={technologies}
                 duration={duration}
+                url={url}
             />
 
         </div>

@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import './custom-modal.css';
+import Link from 'next/link';
 
 export type CustomModalProps = {
     isOpen: boolean;
@@ -11,9 +12,10 @@ export type CustomModalProps = {
     description: string;
     alt:string;
     large:string;
+    url?:string;
 }
 
-export default function CustomModal({isOpen, onClose,title,industries,technologies,description,alt,large,duration}: CustomModalProps) {
+export default function CustomModal({isOpen, onClose,title,industries,technologies,description,alt,large,duration,url}: CustomModalProps) {
     useEffect(() => {
         if (isOpen) {
             document.body.classList.add('no-scroll');
@@ -48,6 +50,12 @@ export default function CustomModal({isOpen, onClose,title,industries,technologi
                     <p className='mb-6'>
                         <span className='font-bold'>Technologies:</span> {technologies}
                     </p>
+                    { url && 
+                        <p className='btn primary mb-6 w-64 text-center'>
+                            <Link href={url} target='_blank'>Please check out!</Link>
+                        </p>
+                    }
+
                     <div className='w-full h-auto mb-4'>
                         <img
                             className="img-fluid"
