@@ -19,10 +19,10 @@ export default function Introducing() {
             //const chars = gsap.utils.toArray(".char") as HTMLElement[];
             //const randomNumber = Math.floor(Math.random() * chars.length);
 
-            let tl = gsap.timeline({
+            const tl = gsap.timeline({
                 defaults: {delay:1}
             });
-            let tl2 = gsap.timeline();
+            const tl2 = gsap.timeline();
             tl
             .from('.introducting',{opacity:0,duration:1,x:-100,ease:"back.inOut"})
             .from('.header',{opacity:0,duration:.5,x:100,ease:"back.inOut"},.3)

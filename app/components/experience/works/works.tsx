@@ -4,7 +4,6 @@ import './works.css';
 import CustomModal from '../../custom-modal/custom-modal';
 
 export type WorksProps = {
-    id: string;
     title: string;
     duration: string;
     industries: string;
@@ -15,7 +14,7 @@ export type WorksProps = {
     large:string;
 }
 
-export default function Work({ id, title, industries, duration, technologies, description, thumb, large, alt}: WorksProps) {
+export default function Work({ title, industries, duration, technologies, description, thumb, large, alt}: WorksProps) {
     
     const [modalOpen, setModalOpen] = React.useState(false);
     

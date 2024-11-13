@@ -1,6 +1,5 @@
 //import Image from "next/image";
 
-import Link from "next/link";
 import Skills from "./components/skills/skills";
 import Experience from "./components/experience/experience";
 import Contact from "./components/contact/contact";

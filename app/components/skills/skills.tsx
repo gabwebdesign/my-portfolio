@@ -14,7 +14,7 @@ export default function Skills() {
 
         mm.add("(min-width: 992px)", () => {
 
-            let tl = gsap.timeline({ease: "none"});
+            const tl = gsap.timeline({ease: "none"});
 
             tl
             .from("#skills",{opacity:0})
@@ -37,7 +37,7 @@ export default function Skills() {
 
           mm.add("(max-width: 991px)", () => {
 
-            let tl = gsap.timeline({ease: "none"});
+            const tl = gsap.timeline({ease: "none"});
 
             tl
             .from("#skills",{opacity:0})

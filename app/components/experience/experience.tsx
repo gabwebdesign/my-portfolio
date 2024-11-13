@@ -1,7 +1,6 @@
 "use client";
 /* eslint-disable @next/next/no-img-element */
 import React from 'react';
-import CustomModal from '../custom-modal/custom-modal';
 import './experience.css';
 import Job, { JobsProps } from './jobs/Jobs';
 import Work, { WorksProps } from './works/works';
@@ -44,7 +43,6 @@ export default function Experience() {
 
     const works: WorksProps[] = [        
         {
-            id: '1',
             title: 'Quierolote Platform',
             industries: 'Real State',
             duration: '6 months',
@@ -55,7 +53,6 @@ export default function Experience() {
             large: '/works/work1_large.webp'
         },
         {
-            id: '2',
             title: 'Cafe Angelina',
             industries: 'E-commerce',
             duration: '1 month',
@@ -66,7 +63,6 @@ export default function Experience() {
             large: '/works/work2_large.webp'
         },
         {
-            id: '3',
             title: 'Life Chicago',
             industries: 'Pharmaceutical',
             duration: '3 month',
@@ -77,7 +73,6 @@ export default function Experience() {
             large: '/works/work3_large.jpg'
         },
         {
-            id: '4',
             title: 'Karyforward Website',
             industries: 'Pharmaceutical',
             duration: '3 month',
@@ -114,7 +109,6 @@ export default function Experience() {
                         { works.map((work, index) => (
                             <div className='work' key={index}>
                                 <Work
-                                    id={work.id}
                                     title={work.title}
                                     industries={work.industries}
                                     duration={work.duration}

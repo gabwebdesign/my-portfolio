@@ -14,7 +14,7 @@ export default function Contact() {
 
     useEffect(() => {
 
-        let tl = gsap.timeline();
+        const tl = gsap.timeline();
         
         tl
         .from(".contact-section", { opacity:0})
