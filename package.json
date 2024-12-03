@@ -16,7 +16,8 @@
     "react": "19.0.0-rc-66855b96-20241106",
     "react-dom": "19.0.0-rc-66855b96-20241106",
     "saas": "^1.0.0",
-    "sass": "^1.80.6"
+    "sass": "^1.80.6",
+    "uvcanvas": "^0.2.2"
   },
   "devDependencies": {
     "@types/node": "^20",

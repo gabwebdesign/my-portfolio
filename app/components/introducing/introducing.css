@@ -2,7 +2,9 @@
     background: linear-gradient(328deg, rgba(255,102,102,0.01) 0%, rgba(255,102,102,0.2) 30%, rgba(255,102,102,0.15) 80%);
 }
 
-
+.nav{
+    z-index: 1;
+}
 
 .header{
     width: 80%;

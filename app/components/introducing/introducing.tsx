@@ -5,6 +5,7 @@ import './introducing.css';
 import { useEffect } from "react";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
+import { Lumiflex } from "uvcanvas";
 
 export default function Introducing() {
 
@@ -83,9 +84,12 @@ export default function Introducing() {
 
     return (
         <div className="introducting">
+            <div className="w-full h-full bg-white absolute">
+                <Lumiflex />
+            </div>
             <section id="intro bg-gray">
                     <div className="flex flex-col justify-between h-80">
-                    <nav>
+                    <nav className="nav">
                         <ul className="flex justify-between">
                         <li className="navbrand">
                             GAB
