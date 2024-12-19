@@ -6,3 +6,9 @@
         grid-template-columns: 1fr;
     }
 }
+
+.custom_bg{
+    background: url('/images/draw-1.svg') no-repeat, #e2dfdf;
+    background-size: cover;
+    background-position: center;
+}

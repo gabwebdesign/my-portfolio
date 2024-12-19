@@ -34,7 +34,7 @@ export default function Contact() {
 
 
     return (
-        <section className="contact-section bg-gray flex flex-col justify-between overflow-hidden" id="contact">
+        <section className="custom_bg contact-section bg-gray flex flex-col justify-between overflow-hidden" id="contact">
             
         <div className="contact flex flex-col justify-between h-full">
             <nav>

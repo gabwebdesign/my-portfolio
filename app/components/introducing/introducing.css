@@ -5,10 +5,3 @@
 .nav{
     z-index: 1;
 }
-
-.header{
-    width: 80%;
-    @media screen and (min-width: 768px){
-        width: 55%;
-    }
-}

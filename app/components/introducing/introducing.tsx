@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
 import { Lumiflex } from "uvcanvas";
+import Image from "next/image";
 
 export default function Introducing() {
 
@@ -99,39 +100,48 @@ export default function Introducing() {
                         </li>
                         </ul>
                     </nav>
-                    <div className="header">
-                        <svg viewBox="0 0 759 486" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <text fill="url(#paint)" xmlSpace="preserve"  fontFamily="Alexandria" fontSize="128" letterSpacing="0em">
-                                <tspan className="tspan" x="0" y="94.888">A devel</tspan>
-                                <tspan id="letter_per" className="tspan" x="540" y="94.888">per</tspan>
-                                <tspan id="letter_o" x="465" y="94.888">o</tspan>
-                                <tspan className="tspan" x="0" y="216.888">building</tspan>
-                                <tspan className="tspan" x="0" y="338.888">interactive </tspan>
-                                <tspan id="experiences" className="tspan" x="0" y="460.888">experiences</tspan>
-                            </text>
-                            <path id="line" d="M2 5.31277L576.214 2" stroke="#3947C3" strokeWidth="3" strokeLinecap="round"/>
-                            <path id="asterisk" d="M51.1414 27.5984H69.0001V41.4003H51.1414L63.7794 54.0369L53.9912 63.778L41.4004 51.1413V69H27.5998V51.1412L14.9618 63.778L5.22077 54.0369L17.8116 41.4003H0V27.5984H17.8116L5.22077 15.0088L14.9618 5.21942L27.5998 17.8115V0H41.4004V17.8117L54.0384 5.21962L63.7794 14.9617L51.1414 27.5984Z" fill="#3947C3"/>
+                    <div className="header flex w-full flex-col-reverse mt-8 md:mt-0 md:flex-row gap-3 md:gap-12">
+                        <div className="w-full">
+                            <svg viewBox="0 0 759 486" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <text fill="url(#paint)" xmlSpace="preserve"  fontFamily="Alexandria" fontSize="128" letterSpacing="0em">
+                                        <tspan className="tspan" x="0" y="94.888">A devel</tspan>
+                                        <tspan id="letter_per" className="tspan" x="540" y="94.888">per</tspan>
+                                        <tspan id="letter_o" x="465" y="94.888">o</tspan>
+                                        <tspan className="tspan" x="0" y="216.888">building</tspan>
+                                        <tspan className="tspan" x="0" y="338.888">interactive </tspan>
+                                        <tspan id="experiences" className="tspan" x="0" y="460.888">experiences</tspan>
+                                    </text>
+                                    <path id="line" d="M2 5.31277L576.214 2" stroke="#3947C3" strokeWidth="3" strokeLinecap="round"/>
+                                    <path id="asterisk" d="M51.1414 27.5984H69.0001V41.4003H51.1414L63.7794 54.0369L53.9912 63.778L41.4004 51.1413V69H27.5998V51.1412L14.9618 63.778L5.22077 54.0369L17.8116 41.4003H0V27.5984H17.8116L5.22077 15.0088L14.9618 5.21942L27.5998 17.8115V0H41.4004V17.8117L54.0384 5.21962L63.7794 14.9617L51.1414 27.5984Z" fill="#3947C3"/>
 
-                            <g id="group">
-                                <rect id="frame" x="4.5" y="4.5" width="555" height="135" stroke="#3947C3"/>
-                                <rect x="1.5" y="0.5" width="7" height="7" fill="#F5F5F5" stroke="black"/>
-                                <path d="M0.5 136.5H7.5V143.5H0.5V136.5Z" fill="#F5F5F5" stroke="black"/>
-                                <path id="box-b-r" d="M556.5 136.5H563.5V143.5H556.5V136.5Z" fill="#F5F5F5" stroke="black"/>
-                                <path id="box-t-r" d="M556.5 0.5H563.5V7.5H556.5V0.5Z" fill="#F5F5F5" stroke="black"/>
-                            </g>
-                            <defs>
-                                <linearGradient className="gradient" id="paint" x1="196.5" y1="5.19919e-06" x2="510" y2="639" gradientUnits="userSpaceOnUse">
-                                    <stop stopColor="#3947C3"/>
-                                    <stop offset="1" stopColor="#1B225D"/>
-                                </linearGradient>
-                            </defs>
-                        </svg>
-                    </div>
-                        {/*
-                            <div className="header">
-                                <h1>A developer building<br className="hidden lg:block" /> interactive experiences</h1>
-                            </div>  
-                        */}                    
+                                    <g id="group">
+                                        <rect id="frame" x="4.5" y="4.5" width="555" height="135" stroke="#3947C3"/>
+                                        <rect x="1.5" y="0.5" width="7" height="7" fill="#F5F5F5" stroke="black"/>
+                                        <path d="M0.5 136.5H7.5V143.5H0.5V136.5Z" fill="#F5F5F5" stroke="black"/>
+                                        <path id="box-b-r" d="M556.5 136.5H563.5V143.5H556.5V136.5Z" fill="#F5F5F5" stroke="black"/>
+                                        <path id="box-t-r" d="M556.5 0.5H563.5V7.5H556.5V0.5Z" fill="#F5F5F5" stroke="black"/>
+                                    </g>
+                                    <defs>
+                                        <linearGradient className="gradient" id="paint" x1="196.5" y1="5.19919e-06" x2="510" y2="639" gradientUnits="userSpaceOnUse">
+                                            <stop stopColor="#3947C3"/>
+                                            <stop offset="1" stopColor="#1B225D"/>
+                                        </linearGradient>
+                                    </defs>
+                            </svg>
+                            
+                        </div>
+                        <div className="w-full md:w-3/4">
+                            <div className="w-full">
+                                <Image
+                                    className="img-fluid"
+                                    src="/images/draw-2.svg"
+                                    alt="draw of me"
+                                    width={1000}
+                                    height={1000}
+                                />
+                            </div>
+                        </div>
+                    </div>                  
                     </div>
             </section>
         </div>
