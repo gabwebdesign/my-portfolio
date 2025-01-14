@@ -1,0 +1,22 @@
+.main{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    /* grid-template-rows: repeat(18, 1fr); */
+    gap: .5rem;
+
+    padding: 1.5rem;
+    min-height: 100vh;
+    /* TODO
+        padding en el container, por ahora lo pongo en el main
+    */
+}
+
+.item {
+    border:1px solid lightblue;
+    border-radius: .5rem;
+}
+
+nav{
+    font-size: 2.5rem;
+}
