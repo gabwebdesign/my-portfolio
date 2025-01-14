@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&family=Roboto:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&family=Baloo+Bhai+2:wght@400..800&family=Bigshot+One&family=Roboto:wght@300;400;500&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,7 +7,7 @@
 :root {
   --background: #FCFBFB;
   --foreground: #171717;
-  --blue:#3947C3;
+  --blue:#1B225D;
   --orange:#FF6666;
   --gray:#EAE9E9;
 }
@@ -21,8 +21,8 @@
 
 body {
   color: var(--foreground);
-  background: var(--background);
-  font-family: "Alexandria", sans-serif;
+  background: var(--gray);
+  font-family: "Baloo Bhai 2", serif;
   font-optical-sizing: auto;
 }
 
@@ -116,4 +116,10 @@ section {
 svg{
   width: 100%;
   height: 100%;
+}
+
+.special-font{
+  font-family: "Bigshot One", serif;
+  font-weight: 400;
+  font-style: normal;
 }
