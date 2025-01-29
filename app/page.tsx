@@ -7,6 +7,7 @@ import Introducing from "./components/introducing/introducing";
 import Main from "./components/main/main";
 import Services from "./components/services/services";
 import Develop from "./components/develop-section/develop";
+import ContactSection from "./components/contact-section/contact-section";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Main />
       <Services />
       <Develop />
+      <ContactSection />
       <Introducing />
       <Skills />
       <Experience />
@@ -21,3 +23,9 @@ export default function Home() {
     </div>
   );
 }
+
+//TODO: Add the following components
+// 1. Brand
+// 2. Contact
+// 3. Improve the design
+
