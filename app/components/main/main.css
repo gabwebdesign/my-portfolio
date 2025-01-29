@@ -5,7 +5,7 @@
     /* grid-template-rows: repeat(18, 1fr); */
     gap: .5rem;
     grid-template-columns:1fr;
-    padding: 1.5rem;
+    padding: .5rem;
     
     /* TODO
         padding en el container, por ahora lo pongo en el main

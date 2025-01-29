@@ -20,7 +20,7 @@
 }*/
 
 body {
-  color: var(--foreground);
+  color: var(--blue);
   background: var(--gray);
   font-family: "Baloo Bhai 2", serif;
   font-optical-sizing: auto;
@@ -95,15 +95,15 @@ blockquote{
 }
 
 section {
-  padding: 4rem;
+  padding: 2rem;
   width: 100%;
 
   min-height: -webkit-fill-available; 
   min-height: 100vh;
   
 
-  @media screen and (max-width: 992px){
-    padding: 2rem;
+  @media screen and (min-width: 992px){
+    padding: .5rem;
   }
 }
 
@@ -146,7 +146,31 @@ svg{
   margin-top: 150px;
   width: 180px;
   height: 35px;
-  background-image: url('/images/icons/connect.svg'); /* Ruta a tu archivo SVG */
+  background-image: url('/images/icons/connect.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.conexion-1::before{
+  content: '';
+  position: absolute;
+  margin-left: 239px;
+  margin-top: 52px;
+  width: 250px;
+  height: 135px;
+  background-image: url('/images/icons/connect-1.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.conexion-2::before{
+  content: '';
+  position: absolute;
+  margin-left: 242px;
+  margin-top: 200px;
+  width: 250px;
+  height: 135px;
+  background-image: url('/images/icons/connect-2.svg');
   background-size: contain;
   background-repeat: no-repeat;
 }
