@@ -1,5 +1,7 @@
+"use client";
 import { useEffect } from 'react';
 import './custom-modal.css';
+import Image from 'next/image';
 import Link from 'next/link';
 
 export type CustomModalProps = {
@@ -13,9 +15,10 @@ export type CustomModalProps = {
     alt:string;
     large:string;
     url?:string;
+    video?:boolean;
 }
 
-export default function CustomModal({isOpen, onClose,title,industries,technologies,description,alt,large,duration,url}: CustomModalProps) {
+export default function CustomModal({isOpen, onClose,title,industries,technologies,description,alt,large,duration,url,video}: CustomModalProps) {
     useEffect(() => {
         if (isOpen) {
             document.body.classList.add('no-scroll');
@@ -55,14 +58,28 @@ export default function CustomModal({isOpen, onClose,title,industries,technologi
                             <Link href={url} target='_blank'>Please check out!</Link>
                         </p>
                     }
-
-                    <div className='w-full h-auto mb-4'>
-                        <img
-                            className="img-fluid"
-                            src={large}
-                            alt={alt}
-                        ></img>
-                    </div>
+                    {
+                        !video && video !== undefined &&
+                        <div className='w-full h-auto mb-4'>
+                            <Image
+                                className="img-fluid"
+                                src={large}
+                                alt={alt}
+                                layout="responsive"
+                                width={700}
+                                height={475}
+                            />
+                        </div>
+                    }
+                    {
+                        video && 
+                        <div className='w-full h-auto mb-4'>
+                            <video className='w-full' controls>
+                                <source src={large} type='video/mp4'/>
+                            </video>
+                        </div>
+                    }
+                    
                 </div>
             </div>
         </div>

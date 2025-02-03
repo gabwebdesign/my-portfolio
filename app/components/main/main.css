@@ -1,19 +1,17 @@
 .main{
+    margin-top: 80px;
     display: flex;
     flex-direction: column;
     font-size: 1.125rem;
-    /* grid-template-rows: repeat(18, 1fr); */
-    gap: .5rem;
+    grid-template-rows: repeat(6, 6.25rem);
+    /*gap: .5rem; */
     grid-template-columns:1fr;
     padding: .5rem;
-    
-    /* TODO
-        padding en el container, por ahora lo pongo en el main
-    */
 
     @media screen and (min-width: 768px){
+        margin-top: 110px;
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(6, 1fr);
         min-height: 100vh;
     }
 }
@@ -54,5 +52,11 @@
 }
 
 nav{
-    font-size: 2.5rem;
+    font-size: 1.5625rem;
 }
+
+.nav-mobile{
+    font-size: 1.5625rem;
+    height: calc(100vh - 80px);
+}
+
