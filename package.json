@@ -16,6 +16,7 @@
     "@mui/material": "^6.4.1",
     "@vercel/analytics": "^1.4.0",
     "@vercel/speed-insights": "^1.1.0",
+    "chart.js": "^4.4.7",
     "next": "15.0.3",
     "resend": "^4.1.1",
     "saas": "^1.0.0",
@@ -24,6 +25,7 @@
     "v18": "^1.0.2"
   },
   "devDependencies": {
+    "@types/chart.js": "^2.9.41",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

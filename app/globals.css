@@ -8,7 +8,7 @@
   --background: #FCFBFB;
   --foreground: #171717;
   --blue:#1B225D;
-  --orange:#FF6666;
+  --orange:#FB8569;
   --gray:#EAE9E9;
 }
 
@@ -18,6 +18,10 @@
     --foreground: #ededed;
   }
 }*/
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   color: var(--blue);
@@ -35,13 +39,22 @@ h1{
   line-height: 5rem;
 }
 
-h2,.heading1,.heading2{
-  font-size: 3.5rem;
+h2{
+  font-size: 3.125rem;
+  line-height: 4rem;
+  @media screen and (min-width: 768px){
+    font-size: 3.3vw;
+    line-height: 1em;
+  }
+}
+
+.heading1,.heading2{
+  font-size: 3.125rem;
   line-height: 4rem;
   color: var(--blue);
-  @media screen and (max-width: 768px){
-    font-size: 3rem;
-    line-height: 4rem;
+  @media screen and (min-width: 768px){
+    font-size: 2.5vw;
+    line-height: 1.5em;
   }
 }
 
@@ -95,16 +108,12 @@ blockquote{
 }
 
 section {
-  padding: 2rem;
+  padding: .5rem;
   width: 100%;
 
   min-height: -webkit-fill-available; 
   min-height: 100vh;
-  
 
-  @media screen and (min-width: 992px){
-    padding: .5rem;
-  }
 }
 
 .btn{
@@ -173,4 +182,8 @@ svg{
   background-image: url('/images/icons/connect-2.svg');
   background-size: contain;
   background-repeat: no-repeat;
+}
+
+.no-scroll {
+  overflow: hidden;
 }

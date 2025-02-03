@@ -66,8 +66,8 @@ export default function ContactSection() {
 
 
     return (
-        <section className="contact-section-design flex flex-col justify-between">
-            <div className="bg-orange rounded-xl p-16">
+        <section className="contact-section-design flex flex-col justify-between" id='contact'>
+            <div className="bg-orange rounded-xl p-5 md:p-16">
                 <div className="flex justify-center mt-20 flex-col lg:flex-row">
                     <div className='mb-16'>
                       <h4 className='text-white text-6xl mb-6'>Let’s work together...</h4> 
