@@ -124,7 +124,8 @@ export default function Develop() {
             </div>
 
             <div>
-                <p className="w-2/3 text-xl lg:ml-14 mb-16">
+                <p className="lg:w-2/3 text-2xl lg:ml-14 mb-3">I am a seasoned front-end developer with extensive experience building responsive websites using frameworks such as Angular and React. I can create a custom website tailored to your specific requirements.</p>
+                <p className="lg:w-2/3 text-2xl lg:ml-14 mb-16">
                     Great web design isn’t just about creating something beautiful; it’s about crafting experiences that inspire, engage, and leave a lasting impact on the world.
                 </p>
             </div>

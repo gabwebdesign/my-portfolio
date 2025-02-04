@@ -26,6 +26,7 @@ export default function Main() {
                         <ul className='flex gap-5'>
                             <li><Link href='#development'>web development</Link></li>
                             <li><Link href='#ia'>AI software</Link></li>
+                            <li><Link href='#contact'>contact</Link></li>
                         </ul>
                     </nav>
                     <div className='hamburguer block md:hidden w-8 h-full' onClick={()=>setMenuOpen(!menuOpen)}>

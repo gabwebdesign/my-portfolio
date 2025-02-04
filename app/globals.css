@@ -202,3 +202,25 @@ svg{
 .no-scroll {
   overflow: hidden;
 }
+
+ul.custom-list{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+ul.custom-list li {
+  list-style-type: none;
+  margin-left: 20px;
+}
+
+ul.custom-list li::before {
+  content: '';
+  display: inline-block;
+  width: 16px; 
+  height: 16px; 
+  background-image: url('/images/icons/check.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 8px;
+}
