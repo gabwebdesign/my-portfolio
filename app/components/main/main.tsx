@@ -1,6 +1,5 @@
 'use client';
 import { useEffect, useState } from 'react';
-import PieChart from '../chart-skill/pie-chart';
 import './main.css';
 import Image from "next/image";
 import Link from 'next/link';
@@ -178,7 +177,7 @@ export default function Main() {
                     const contactSection = document.getElementById('contact');
                     contactSection?.scrollIntoView({ behavior: 'smooth' });
                 }}>
-                <p className='text-3xl'>Let's Talk</p>
+                <p className='text-3xl'>Let&apos;s Talk</p>
                 <Image 
                     src={'/images/icons/arrow.svg'}
                     alt='arrow button to contact section'

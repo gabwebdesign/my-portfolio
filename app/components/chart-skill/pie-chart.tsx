@@ -1,4 +1,4 @@
-"use client"; // Para asegurarnos de que se renderiza en el cliente
+"use client";
 import { useEffect, useRef } from "react";
 import Chart, { ChartConfiguration } from "chart.js/auto";
 import { ChartType } from "chart.js";
