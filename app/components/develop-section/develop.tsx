@@ -130,7 +130,7 @@ export default function Develop() {
                 </p>
             </div>
 
-            <div className="w-full flex flex-col md:flex-row gap-12 md:gap-3 mb-20 flex-wrap">
+            <div className="w-full flex flex-col md:flex-row gap-12 lg:gap-1 mb-20 flex-wrap">
                 
                 <h3 className="mb-6 p-12 special-font text-center text-4xl">Work</h3>
 

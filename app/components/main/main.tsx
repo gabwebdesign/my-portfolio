@@ -34,8 +34,12 @@ export default function Main() {
     useEffect(() => {
         if (menuOpen) {
             document.body.classList.add('no-scroll');
+            gsap.to('.bread', {transformOrigin:'center center',rotation:405,ease:'bounce.out',duration: .2});
+            gsap.to('.bread-2', {transformOrigin:'center center',rotation:-405,y:-15,ease:'bounce.out',duration: .2});
         } else {
             document.body.classList.remove('no-scroll');
+            gsap.to('.bread', {rotation:0,duration: .2});
+            gsap.to('.bread-2', {rotation:0,y:0,duration: .2});
         }
     }, [menuOpen]);
 
@@ -52,8 +56,8 @@ export default function Main() {
                     </nav>
                     <div className='hamburguer block md:hidden w-8 h-full' onClick={()=>setMenuOpen(!menuOpen)}>
                         <ul className='flex flex-col gap-3 justify-center h-full'>
-                            <li className='w-full h-1 bg-blue'></li>
-                            <li className='w-full h-1 bg-blue'></li>
+                            <li className='bread w-full h-1 bg-blue'></li>
+                            <li className='bread-2 w-full h-1 bg-blue'></li>
                         </ul>
                     </div>
                     <Link href='#main' className='special-font text-4xl'>gab</Link>
