@@ -59,9 +59,23 @@ export default function Services() {
         <section className="mt-5" id="ia">
             <div className="mb-28 lg:ml-12">
                 <h1 className="mb-12">Bring the Power of AI to < br className="hidden md:block"/>Your Business with <span className="text-orange special-font">RAG</span>!</h1>
-                <p className="md:w-2/3 text-xl md:ml-10">
-                    Do you need an intelligent system that not only retrieves information but also generates contextually rich and meaningful responses? I&apos;m here to create custom <span className="text-orange special-font text-3xl">RAG</span> (Retrieval-Augmented Generation) solutions tailored to your business needs.
+                <p className="md:w-2/3 text-2xl md:ml-10 mb-5">
+                    Do you need an intelligent system that not only retrieves information but also generates contextually rich and meaningful responses? I&apos;m here to create custom <span className="text-orange special-font">RAG</span> (Retrieval-Augmented Generation) solutions tailored to your business needs.
                 </p>
+                <p className="md:w-2/3 text-2xl md:ml-10 mb-5">Imagine a system that goes beyond simple answers—it understands context, adapts to your needs, and provides real-world solutions in an intuitive way.</p>
+
+                <ul className="custom-list md:w-2/3 text-2xl md:ml-10 mb-5">
+                    <li>Automate appointment bookings – A chatbot that helps schedule dentist appointments effortlessly.</li>
+                    <li>Enhance customer support – A virtual assistant that provides instant answers to common queries.</li>
+                    <li>Streamline order processing – An AI system that automates order tracking and delivery updates.</li>
+                    <li>Plan perfect trips – An AI assistant that creates personalized travel itineraries based on preferences and available options.</li>
+                    <li>Smart recommendations for hardware stores – A system that analyzes a photo of a broken pipe and suggests how to fix it, listing the exact tools and products you need.</li>
+                    <li>Fashion & styling assistance – An AI that suggests outfit combinations based on available store inventory and personal style preferences.</li>
+                </ul>
+
+                <p className="md:w-2/3 text-2xl md:ml-10 mb-5">These are just a few examples of how AI-powered solutions can transform your business. Whether you need intelligent automation, seamless customer interactions, or smart recommendations, I’m here to build the perfect solution for you.</p>
+
+                <p className="md:w-2/3 text-4xl text-orange md:ml-10 mb-5">Let’s bring your AI vision to life!</p>
             </div>
             <div className="w-full flex flex-col md:flex-row gap-3 lg:gap-40 lg:ml-24 mb-28">
                 {services.map((service, index) => (
