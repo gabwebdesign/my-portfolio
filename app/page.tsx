@@ -19,7 +19,5 @@ export default function Home() {
 
 //TODO: Do the following:
 // 1. Mejorar la linea en los icons
-// 2. animation del menu hamburguesa
-// 3. animacion intro
-// 5. segundo grafico skills
+// 2. animacion intro
 

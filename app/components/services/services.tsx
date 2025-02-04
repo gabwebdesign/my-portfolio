@@ -82,7 +82,7 @@ export default function Services() {
                 ))} 
             </div>
 
-            <div className="w-full flex flex-col md:flex-row flex-wrap gap-12 md:gap-3 mb-20">
+            <div className="w-full flex flex-col md:flex-row flex-wrap gap-12 md:gap-1 mb-20">
                 
                 <h4 className="mb-6 p-12 special-font text-center text-4xl">Work</h4>
 
