@@ -54,9 +54,8 @@ export default function Services() {
         }
     ]
 
-
     return (
-        <section className="mt-5" id="ia">
+        <section className="mt-32" id="ia">
             <div className="mb-28 lg:ml-12">
                 <h1 className="mb-12">Bring the Power of AI to < br className="hidden md:block"/>Your Business with <span className="text-orange special-font">RAG</span>!</h1>
                 <p className="md:w-2/3 text-2xl md:ml-10 mb-5">

@@ -1,8 +1,16 @@
 "use client"; // Para asegurarnos de que se renderiza en el cliente
 import { useEffect, useRef } from "react";
 import Chart, { ChartConfiguration } from "chart.js/auto";
+import { ChartType } from "chart.js";
 
-const PieChart = () => {
+type PieChartProps = {
+  type: ChartType;
+  labels: string[];
+  data: number[];
+  backgroundColors: string[];
+}
+
+const PieChart = ({ type,labels,data,backgroundColors }:PieChartProps) => {
   const chartRef = useRef<HTMLCanvasElement | null>(null);
   const chartInstance = useRef<Chart | null>(null);
 
@@ -18,13 +26,13 @@ const PieChart = () => {
     if (!ctx) return;
 
     const config: ChartConfiguration = {
-      type: "doughnut",
+      type,
       data: {
-      labels: ["JavaScript", "TypeScript", "Python", "Angular", "React"],
+      labels,
       datasets: [
         {
-        data: [30, 20, 25, 15, 10],
-        backgroundColor: ["#1B225D", "#FB8569", "#EEEEEE", "#1B225D", "#FB8569"],
+        data,
+        backgroundColor:backgroundColors,
         },
       ],
       },
