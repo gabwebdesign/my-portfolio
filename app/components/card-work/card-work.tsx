@@ -35,7 +35,7 @@ export default function CardWork({
     const [modalOpen, setModalOpen] = useState(false);
 
     return (
-        <div className={`card-services w-full flex justify-center rounded-md ${className} cursor-pointer md:w-64`}>
+        <div className={`card-services w-full flex justify-center ${className} cursor-pointer md:w-64`}>
             <div 
                 className="card-services__content w-full h-full flex flex-col justify-center p-10"
                 onClick={() => setModalOpen(true)}
@@ -43,12 +43,12 @@ export default function CardWork({
                 <div className="card-services__icon mb-6 w-full flex justify-center">
                     <Image src={icon} 
                         alt={title}
-                        width={100}
-                        height={100}
+                        width={70}
+                        height={70}
                         className="mb-3"
                     />
                 </div>
-                <h3 className="mb-5 text-white text-3xl text-center w-full">{title}</h3>
+                <h3 className="mb-5 text-dark text-3xl text-center w-full">{title}</h3>
             </div>
 
             <CustomModal

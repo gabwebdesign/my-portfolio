@@ -20,7 +20,7 @@ export default function Main() {
 
     return (
         <div id='main'>
-            <div className='w-full p-6 fixed bg-gray'>
+            <div className='w-full p-6 fixed bg-gray z-1 index'>
                 <div className='flex justify-between items-center cursor-pointer'>
                     <nav className='hidden md:flex'>
                         <ul className='flex gap-5'>
@@ -38,7 +38,7 @@ export default function Main() {
                 </div>
                 {
                    menuOpen && 
-                   <div className='nav-mobile w-full md:hidden h-full bg-gray p-6'>
+                   <div className='nav-mobile w-full md:hidden h-full bg-gray p-6 z-1'>
                         <ul className='flex flex-col gap-10 mt-20'>
                             <li className='text-center'><Link href='#development' onClick={()=>{setMenuOpen(false)}}>web development</Link></li>
                             <li className='text-center'><Link href='#ia' onClick={()=>{setMenuOpen(false)}}>AI software</Link></li>
