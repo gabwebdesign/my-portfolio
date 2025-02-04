@@ -10,6 +10,8 @@
   --blue:#1B225D;
   --orange:#FB8569;
   --gray:#EAE9E9;
+  --light:#EEEEEE;
+  --purple:#6365B2;
   --dark:var(--foreground);
 }
 
@@ -45,6 +47,10 @@ h2{
   line-height: 4rem;
   @media screen and (min-width: 768px){
     font-size: 3.3vw;
+    line-height: 1em;
+  }
+  @media screen and (min-width: 2440px){
+    font-size: 3.5rem;
     line-height: 1em;
   }
 }

@@ -4,11 +4,32 @@ import PieChart from '../chart-skill/pie-chart';
 import './main.css';
 import Image from "next/image";
 import Link from 'next/link';
+import gsap from 'gsap';
 
 export default function Main() {
 
     const [menuOpen, setMenuOpen] = useState(false);
 
+    useEffect(        
+        () => {
+
+
+            const tl = gsap.timeline({
+                defaults: {
+                    delay:2,
+                    ease: "power4.out"
+                },
+                
+            });
+            tl
+            .from('.piechart',{x:-(window.innerWidth),opacity:0},.1)
+            .from('.message',{x:(window.innerWidth),opacity:0},.1)
+            .from('.profile',{x:-(window.innerWidth)},.1)
+            .from('.lets-talk',{y:-800},.2)
+            .from('.second-piechart',{y:-800},.3)
+
+        },[]
+    ); 
 
     useEffect(() => {
         if (menuOpen) {
@@ -65,14 +86,19 @@ export default function Main() {
                     <Image 
                         src={'/images/icons/monitor.png'}
                         alt='icono monitor'
-                        width={72}
-                        height={72}
+                        width={62}
+                        height={62}
                     ></Image>
             </div>
-            <div className="w-full flex justify-center items-center bg-white row-span-2 col-span-2 p-6 h-[11rem] md:h-auto">
-                  <PieChart />            
+            <div className="piechart w-full flex justify-center items-center bg-light row-span-2 col-span-2 p-6 h-[11rem] md:h-auto gap-6">
+                    <Image 
+                        src={'/images/graph-skills.png'}
+                        alt='skills chart'
+                        width={228}
+                        height={144}
+                    ></Image>           
             </div>
-            <div className="w-full flex flex-col justify-between bg-orange col-span-2 row-span-3">
+            <div className="profile w-full flex flex-col justify-between bg-orange col-span-2 row-span-3">
                 <div className='flex flex-col items-end justify-between'>
                     <ul className='grid grid-cols-3 h-4 w-full '>
                         <li className='w-full h-full bg-blue'></li>
@@ -89,8 +115,12 @@ export default function Main() {
                     ></Image>
                 </div>
             </div>
-            <div className="w-full row-span-4"></div>
-            <div className="w-full row-span-3 col-span-3  bg-blue">
+            <div className="w-full flex-col pt-10 items-center hidden lg:flex row-span-4">
+                <p className='text-3xl text-orange'>AaBbCc</p>
+                <p className='text-3xl text-blue'>AaBbCc</p>
+                <p className='text-3xl text-purple'>AaBbCc</p>
+            </div>
+            <div className="message w-full row-span-3 col-span-3  bg-blue">
                 <div className='flex flex-col items-end justify-between w-full h-full p-7'>
                     <Image 
                         src={'/images/icons/asterisk.svg'}
@@ -98,13 +128,48 @@ export default function Main() {
                         width={62}
                         height={62}
                     ></Image>
-                    <h2 className='w-full text-white mb-3 p-6'>Hi, 👋 Gab, your software developer, open your<br  className='hidden lg:flex'/>source of success!</h2>
+                    <h2 className='w-full text-white mb-3'>Hi, 👋 Gab, your software developer, open your<br  className='hidden lg:flex 2xl:hidden'/>source of success!</h2>
                 </div>
             </div>
-            <div className='col-span-2 row-span-2'></div>
+            <div className='second-piechart col-span-2 row-span-3 flex flex-col justify-between bg-light h-full'>
+                    <div className='w-full flex justify-start'>
+                        <Image 
+                            src={'/images/boxes2.svg'}
+                            alt='boxes'
+                            width={48}
+                            height={48}
+                        ></Image>
+                    </div>
+                    <div className='w-full flex justify-center'>
+                        <Image 
+                            src={'/images/graph-soft-skills.png'}
+                            alt='soft skills chart'
+                            width={320}
+                            height={155}
+                            className='ml-10 p-6'
+                        ></Image>
+                    </div>
+                    
+
+                    <div className='w-full flex justify-end'>
+                        <Image 
+                            src={'/images/boxes2.svg'}
+                            alt='boxes'
+                            width={48}
+                            height={48}
+                        ></Image>
+                    </div>
+            </div>
             
-            <div className='col-span-2'></div>
-            <div className='bg-blue text-white flex justify-between items-center p-7 cursor-pointer' 
+            <div className='col-span-2'>
+                <Image 
+                        src={'/images/boxes.svg'}
+                        alt='boxes'
+                        width={48}
+                        height={48}
+                    ></Image>
+            </div>
+            <div className='lets-talk bg-blue text-white flex justify-between items-center p-7 cursor-pointer' 
                 onClick={() => {
                     const contactSection = document.getElementById('contact');
                     contactSection?.scrollIntoView({ behavior: 'smooth' });
