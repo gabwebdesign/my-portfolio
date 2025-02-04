@@ -111,7 +111,7 @@ export default function Develop() {
         <section className="mt-5" id="development">
             <div className="mb-18 flex flex-col lg:flex-row gap-6">
                 <div className="lg:w-96">
-                    <h1 className="mb-12">Are you ready to < br className="hidden md:block"/> <span className="text-orange">&lt;open source of success&gt;</span></h1>
+                    <h2 className="mb-12 text-7xl lg:ml-5">Are you ready to < br className="hidden md:block"/> <span className="text-orange">&lt;open source of success&gt;</span></h2>
                 </div>
                 <div>
                     <div className="flex flex-col md:flex-row gap-5 w-full mb-28">
@@ -124,15 +124,15 @@ export default function Develop() {
             </div>
 
             <div>
-                <p className="lg:w-2/3 text-2xl lg:ml-14 mb-3">I am a seasoned front-end developer with extensive experience building responsive websites using frameworks such as Angular and React. I can create a custom website tailored to your specific requirements.</p>
-                <p className="lg:w-2/3 text-2xl lg:ml-14 mb-16">
+                <p className="lg:w-2/3 text-2xl lg:ml-14 mb-4">I am a seasoned front-end developer with extensive experience building responsive websites using frameworks such as Angular and React. I can create a custom website tailored to your specific requirements.</p>
+                <p className="lg:w-2/3 text-2xl lg:ml-14 mb-24">
                     Great web design isn’t just about creating something beautiful; it’s about crafting experiences that inspire, engage, and leave a lasting impact on the world.
                 </p>
             </div>
 
             <div className="w-full flex flex-col md:flex-row gap-12 md:gap-3 mb-20 flex-wrap">
                 
-                <h4 className="mb-6 p-12 text-center">Work</h4>
+                <h3 className="mb-6 p-12 special-font text-center text-4xl">Work</h3>
 
                 {works.map((work, index) => (
                     <CardWork key={index} {...work} />

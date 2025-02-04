@@ -70,7 +70,7 @@ export default function ContactSection() {
             <div className="bg-orange rounded-xl p-5 md:p-16">
                 <div className="flex justify-center mt-20 flex-col lg:flex-row">
                     <div className='mb-16'>
-                      <h4 className='text-white text-6xl mb-6'>Let’s work together...</h4> 
+                      <h3 className='text-white special-font text-6xl mb-6'>Let’s work together...</h3> 
                       <p className='text-white lg:w-2/3 mb-10'>If you would like to learn more about my qualifications and
                       discuss potential projects, please do not hesitate to reach out.</p> 
 

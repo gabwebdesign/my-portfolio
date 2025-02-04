@@ -21,7 +21,7 @@ export default function CardServices({ icon, title, description, className }: Se
                 />
             </div>
             <div className="card-services__content mb-5">
-                <h3 className="mb-5">{title}</h3>
+                <h4 className="mb-5 text-3xl">{title}</h4>
                 <p className="text-2xl">{description}</p>
             </div>
             
