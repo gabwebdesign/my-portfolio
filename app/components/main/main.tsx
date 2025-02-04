@@ -20,7 +20,7 @@ export default function Main() {
 
     return (
         <div id='main'>
-            <div className='w-full p-6 fixed bg-gray z-1 index'>
+            <div className='navigation w-full p-6 fixed bg-gray z-1 index'>
                 <div className='flex justify-between items-center cursor-pointer'>
                     <nav className='hidden md:flex'>
                         <ul className='flex gap-5'>
