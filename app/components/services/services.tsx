@@ -6,21 +6,21 @@ export default function Services() {
 
     const services:ServicesProps[] = [
         {
-            icon: '/images/icons/flash.png',
+            icon: '/images/icons/bolt.svg',
             title: 'IA Agent',
-            description: 'I will develop a flow to guide the user to driven the info desired by the company',
+            description: 'Advanced RAG assistant with multi-dataset support, real-time API integration, and custom frontend.',
             className: 'conexion-left'
         },
         {
-            icon: '/images/icons/brain.png',
-            title: 'RAG Solutions',
-            description: 'I will develop a flow to guide the user to driven the info desired by the company',
+            icon: '/images/icons/assistance.svg',
+            title: 'Assistance',
+            description: 'Full RAG system with vector database integration. Up to 3 data sources and dynamic responses.',
             className: 'conexion-left'
         },
         {
             icon: '/images/icons/chat.png',
             title: 'Chatbot',
-            description: 'I will develop a flow to guide the user to driven the info desired by the company',
+            description: 'I will develop a flow to guide the user to driven the info desired by the company using WhatsApp Channel.',
         }
     ]
 
@@ -58,12 +58,12 @@ export default function Services() {
     return (
         <section className="mt-5" id="ia">
             <div className="mb-28 lg:ml-12">
-                <h1 className="mb-12">Bring the Power of AI to < br className="hidden md:block"/>Your Business! <span className="text-orange special-font">RAG</span> as service</h1>
+                <h1 className="mb-12">Bring the Power of AI to < br className="hidden md:block"/>Your Business with <span className="text-orange special-font">RAG</span>!</h1>
                 <p className="md:w-2/3 text-xl md:ml-10">
-                    Do you need an intelligent system that not only retrieves information but also generates contextually rich and meaningful responses? I&apos;m here to create custom RAG (Retrieval-Augmented Generation) solutions tailored to your business needs.
+                    Do you need an intelligent system that not only retrieves information but also generates contextually rich and meaningful responses? I&apos;m here to create custom <span className="text-orange special-font text-3xl">RAG</span> (Retrieval-Augmented Generation) solutions tailored to your business needs.
                 </p>
             </div>
-            <div className="w-full flex flex-col md:flex-row gap-1 lg:gap-40 mb-28">
+            <div className="w-full flex flex-col md:flex-row gap-3 lg:gap-40 lg:ml-24 mb-28">
                 {services.map((service, index) => (
                     <CardServices key={index} {...service} />
                 ))} 

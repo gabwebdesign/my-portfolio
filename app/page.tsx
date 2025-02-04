@@ -17,8 +17,11 @@ export default function Home() {
   );
 }
 
-//TODO: Add the following components
-// 1. Brand
-// 2. Contact
-// 3. Improve the design
+//TODO: Do the following:
+// 1. Mejorar la linea en los icons
+// 2. animation del menu hamburguesa
+// 3. animacion intro
+// 4 . mejorar contenido de la seccion de desarrollo
+// 5. segundo grafico skills
+// 6. animacion de intro
 

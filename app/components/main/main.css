@@ -60,3 +60,6 @@ nav{
     height: calc(100vh - 80px);
 }
 
+.index{
+    z-index: 1;
+}

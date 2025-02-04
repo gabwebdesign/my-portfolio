@@ -10,6 +10,7 @@
   --blue:#1B225D;
   --orange:#FB8569;
   --gray:#EAE9E9;
+  --dark:var(--foreground);
 }
 
 /*@media (prefers-color-scheme: dark) {
@@ -182,6 +183,20 @@ svg{
   background-image: url('/images/icons/connect-2.svg');
   background-size: contain;
   background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 768px){
+  .conexion-left::before{
+    display: none;
+  }
+
+  .conexion-1::before{
+    display: none;
+  }
+
+  .conexion-2::before{
+    display: none;
+  }
 }
 
 .no-scroll {
