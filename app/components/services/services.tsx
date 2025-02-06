@@ -62,11 +62,10 @@ export default function Services() {
 
     useEffect(() => {
         if(window.innerWidth > 1024){
-            console.log("hello")
             const tl = gsap.timeline({
                 defaults: {
                     ease: "power4.out",
-                    duration: 1
+                    duration: 1,
                 },
                 
             });

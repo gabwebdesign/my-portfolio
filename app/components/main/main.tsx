@@ -4,15 +4,18 @@ import './main.css';
 import Image from "next/image";
 import Link from 'next/link';
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 export default function Main() {
 
 
     const [menuOpen, setMenuOpen] = useState(false);
+    gsap.registerPlugin(ScrollTrigger);
 
-    useEffect(        
+    useEffect(     
+         
         () => {
-
+            console.log('useEffect');  
             const tl = gsap.timeline({
                 defaults: {
                     ease: "power4.out"
@@ -34,7 +37,22 @@ export default function Main() {
             .set('.profile-image',{x:200,scale:1},1.2)
             .to('.profile-image',{x:0,duration:3})
             .set('.box',{opacity:0,stagger:.3},.8)
-            .set('.box',{opacity:1,stagger:.3},1.1)
+            .set('.box',{opacity:1,stagger:.3},1.1);
+
+
+            ScrollTrigger.create({
+                start: "top top", // Activa el trigger en la parte superior
+                end: "bottom bottom",
+                onUpdate: (self) => {
+                if (self.direction === 1) {
+                    // Scroll hacia abajo
+                    gsap.to('.navigation', { y: -100, opacity: 0, duration: 0.3, ease: "power2.out" });
+                } else {
+                    // Scroll hacia arriba
+                    gsap.to('.navigation', { y: 0, opacity: 1, duration: 0.3, ease: "power2.out" });
+                }
+                }
+            });
 
         },[]
     ); 
@@ -51,15 +69,24 @@ export default function Main() {
         }
     }, [menuOpen]);
 
+    const forceTriggerAnimations = () => {
+        console.log('forceTriggerAnimations');
+        ScrollTrigger.getAll().forEach((st) => {
+         console.log('trigger', st.trigger);
+          st.animation?.progress(1).pause(); // Forzar animación al final
+        });
+    };
+
+
     return (
         <div id='main'>
             <div className='navigation w-full p-6 fixed bg-gray z-1 index'>
                 <div className='flex justify-between items-center cursor-pointer'>
                     <nav className='hidden md:flex'>
                         <ul className='flex gap-5'>
-                            <li><Link href='#development'>web development</Link></li>
-                            <li><Link href='#ia'>AI software</Link></li>
-                            <li><Link href='#contact'>contact</Link></li>
+                            <li><Link href='#ia' onClick={forceTriggerAnimations}>AI software</Link></li>
+                            <li><Link href='#development' onClick={forceTriggerAnimations}>web development</Link></li>
+                            <li><Link href='#contact' onClick={forceTriggerAnimations}>contact</Link></li>
                         </ul>
                     </nav>
                     <div className='hamburguer block md:hidden w-8 h-full' onClick={()=>setMenuOpen(!menuOpen)}>
@@ -74,8 +101,8 @@ export default function Main() {
                    menuOpen && 
                    <div className='nav-mobile w-full md:hidden h-full bg-gray p-6 z-1'>
                         <ul className='flex flex-col gap-10 mt-20'>
-                            <li className='text-center'><Link href='#development' onClick={()=>{setMenuOpen(false)}}>web development</Link></li>
                             <li className='text-center'><Link href='#ia' onClick={()=>{setMenuOpen(false)}}>AI software</Link></li>
+                            <li className='text-center'><Link href='#development' onClick={()=>{setMenuOpen(false)}}>web development</Link></li>
                             <li className='text-center'><Link href='#contact' onClick={()=>{setMenuOpen(false)}}>contact</Link></li>
                         </ul>
                     </div>

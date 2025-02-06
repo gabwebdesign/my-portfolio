@@ -25,7 +25,7 @@ export default function ContactSection() {
             const tl = gsap.timeline({
                 defaults: {
                     ease: "power4.out",
-                    duration: 1
+                    duration: 1,
                 }
             });
 
