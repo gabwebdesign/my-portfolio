@@ -7,25 +7,34 @@ import gsap from 'gsap';
 
 export default function Main() {
 
+
     const [menuOpen, setMenuOpen] = useState(false);
 
     useEffect(        
         () => {
 
-
             const tl = gsap.timeline({
                 defaults: {
-                    delay:2,
                     ease: "power4.out"
                 },
                 
             });
             tl
+            .set('.profile-image',{x:-200})
             .from('.piechart',{x:-(window.innerWidth),opacity:0},.1)
-            .from('.message',{x:(window.innerWidth),opacity:0},.1)
-            .from('.profile',{x:-(window.innerWidth)},.1)
-            .from('.lets-talk',{y:-800},.2)
-            .from('.second-piechart',{y:-800},.3)
+            .from('.message',{x:-(window.innerWidth),scale:5,opacity:0},.25)
+            .from('.monitor',{x:-(window.innerWidth),y:-(window.innerHeight),scale:5,opacity:0},.1)
+            .from('.profile',{x:(window.innerWidth),scale:5},.15)
+            .from('.lets-talk',{y:-800},.1)
+            .from('.second-piechart',{y:(window.innerHeight)*2,scale:10},.2)
+            .from('.navigation',{y:-300},.4)
+            .set('.profile-image',{x:100,scale:.5})
+            .set('.profile-image',{x:-200,scale:.1},1)
+            .from('.message__text',{y:500},.4)
+            .set('.profile-image',{x:200,scale:1},1.2)
+            .to('.profile-image',{x:0,duration:3})
+            .set('.box',{opacity:0,stagger:.3},.8)
+            .set('.box',{opacity:1,stagger:.3},1.1)
 
         },[]
     ); 
@@ -85,7 +94,7 @@ export default function Main() {
                     ></Image>
                 </div>
             </div>
-            <div className="flex justify-center items-center w-full bg-orange row-span-2">
+            <div className="monitor flex justify-center items-center w-full bg-orange row-span-2">
                     <Image 
                         src={'/images/icons/monitor.png'}
                         alt='icono monitor'
@@ -115,6 +124,7 @@ export default function Main() {
                         alt='just me in draw'
                         width={250}
                         height={297}
+                        className='profile-image'
                     ></Image>
                 </div>
             </div>
@@ -124,14 +134,14 @@ export default function Main() {
                 <p className='text-3xl text-purple'>AaBbCc</p>
             </div>
             <div className="message w-full row-span-3 col-span-3  bg-blue">
-                <div className='flex flex-col items-end justify-between w-full h-full p-7'>
+                <div className='flex flex-col items-end justify-between w-full h-full p-7 overflow-hidden'>
                     <Image 
                         src={'/images/icons/asterisk.svg'}
                         alt='just asterisk'
                         width={62}
                         height={62}
                     ></Image>
-                    <h2 className='w-full text-white mb-3'>Hi, 👋 Gab, your software developer, open your<br  className='hidden lg:flex 2xl:hidden'/>source of success!</h2>
+                    <h2 className='message__text w-full text-white mb-3'>Hi, 👋 Gab, your software developer, open your<br  className='hidden lg:flex 2xl:hidden'/>source of success!</h2>
                 </div>
             </div>
             <div className='second-piechart col-span-2 row-span-3 flex flex-col justify-between bg-light h-full'>
@@ -141,6 +151,7 @@ export default function Main() {
                             alt='boxes'
                             width={48}
                             height={48}
+                            className='box'
                         ></Image>
                     </div>
                     <div className='w-full flex justify-center'>
@@ -160,6 +171,7 @@ export default function Main() {
                             alt='boxes'
                             width={48}
                             height={48}
+                            className='box'
                         ></Image>
                     </div>
             </div>
@@ -170,6 +182,7 @@ export default function Main() {
                         alt='boxes'
                         width={48}
                         height={48}
+                        className='box'
                     ></Image>
             </div>
             <div className='lets-talk bg-blue text-white flex justify-between items-center p-7 cursor-pointer' 

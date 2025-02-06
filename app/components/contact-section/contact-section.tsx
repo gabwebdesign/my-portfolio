@@ -1,9 +1,13 @@
 "use client";
-import { useEffect, useState } from 'react';
+import { use, useEffect, useState } from 'react';
 import './contact-section.css';
 import Image from 'next/image';
 import { createOportunity } from '../utils/actions';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import gsap from 'gsap';
+
 export default function ContactSection() {
+    gsap.registerPlugin(ScrollTrigger);
 
     const [emailError, setEmailError] = useState('');
     const [fullnameError, setFullnameError] = useState('');
@@ -14,6 +18,33 @@ export default function ContactSection() {
         email:'',
         message:'',
     })
+
+    useEffect(() => {
+        
+        if(window.innerWidth > 1024){
+            const tl = gsap.timeline({
+                defaults: {
+                    ease: "power4.out",
+                    duration: 1
+                }
+            });
+
+            tl
+            .from('.contact_container',{scale:10,opacity:0})
+            .from('.contact__text',{y:20,opacity:0,stagger:.5})
+            .from('.icons li',{y:20,opacity:0,stagger:.5})
+            .from('.contact-form',{x:200,opacity:0})
+            
+
+            ScrollTrigger.create({
+                trigger:"#contact",
+                start: "-550px",
+                end: "-50px",
+                animation: tl,
+                scrub: true,
+            })
+        }
+    },[]);
 
     useEffect(() => {
         setIsFormValid(
@@ -67,14 +98,14 @@ export default function ContactSection() {
 
     return (
         <section className="contact-section-design flex flex-col justify-between" id='contact'>
-            <div className="bg-orange rounded-xl p-5 md:p-16">
+            <div className="contact_container bg-orange rounded-xl p-5 md:p-16">
                 <div className="flex justify-center mt-20 flex-col lg:flex-row">
                     <div className='mb-16'>
-                      <h3 className='text-white special-font text-6xl mb-6'>Let’s work together...</h3> 
-                      <p className='text-white lg:w-2/3 mb-10'>If you would like to learn more about my qualifications and
+                      <h3 className='contact__text text-white special-font text-6xl mb-6'>Let’s work together...</h3> 
+                      <p className='contact__text text-white lg:w-2/3 mb-10'>If you would like to learn more about my qualifications and
                       discuss potential projects, please do not hesitate to reach out.</p> 
 
-                      <div className='flex flex-row items-start mb-10 gap-3'>
+                      <div className='contact__text flex flex-row items-start mb-10 gap-3'>
                             <Image 
                                 src={'/images/icons/location.svg'}
                                 alt='location'
@@ -87,7 +118,7 @@ export default function ContactSection() {
                             </div>
                       </div>
 
-                      <div className='flex flex-row items-start mb-10 gap-3'>
+                      <div className='contact__text flex flex-row items-start mb-10 gap-3'>
                             <Image 
                                 src={'/images/icons/email.svg'}
                                 alt='email icon'
@@ -101,7 +132,7 @@ export default function ContactSection() {
                             </div>
                       </div>
                       <div className='social'>
-                        <ul className='flex gap-3 lg:ml-7'>
+                        <ul className='icons flex gap-3 lg:ml-7'>
                             <li>
                                 <div className='cursor-pointer' onClick={()=>openWhatsApp('62000055')}>
                                     <Image 

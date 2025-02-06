@@ -10,8 +10,8 @@ export type ServicesProps = {
 
 export default function CardServices({ icon, title, description, className }: ServicesProps) {
     return (
-        <div>
-            <div className={`card-services p-6 bg-white lg:w-72 ${className} lg:min-h-[430px]`}>
+        <div className={className}>
+            <div className={`card-services p-6 bg-white lg:w-72 lg:min-h-[430px]`}>
             <div className="card-services__icon pt-5">
                 <Image src={icon} 
                     alt={title}
