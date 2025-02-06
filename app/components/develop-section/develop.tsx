@@ -1,23 +1,59 @@
+"use client";
+import { useEffect } from "react";
 import CardServices, { ServicesProps } from "../card-services/card-services"
 import CardWork, { ThumbWorkProps } from "../card-work/card-work"
 import './develop.css';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
 export default function Develop() {
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    useEffect(() => {
+        if(window.innerWidth > 1024) {
+            const tl = gsap.timeline({
+                defaults: {
+                    ease: "power4.out"
+                },
+            });
+            tl
+            .from('#development',{opacity:0})
+            .from('.frontend',{y:500,opacity:0},.1)
+            .from('.backend',{y:500,opacity:0},.15)
+            .from('.ux',{y:500,opacity:0},.2)
+
+            ScrollTrigger.create({
+                trigger:"#development",
+                //pin: true,
+                start: "-400px",
+                end: "-200px",
+                animation: tl,
+                scrub: true,
+                //markers: true
+            })
+        }
+
+    },[]);
 
     const services:ServicesProps[] = [
         {
             icon: '/images/icons/frontend.svg',
             title: 'Frontend',
             description: 'A custom design and development in your website tailored to your specific requirements focused on performance, and accessibility are key.',
+            className: 'frontend'
         },
         {
             icon: '/images/icons/database.svg',
             title: 'Backend',
             description: 'Powerful server-side development using .NET and Node.js to build secure, scalable, and enabling intelligent automation and data processing.',
+            className: 'backend'
         },
         {
             icon: '/images/icons/user.svg',
             title: 'UX UI Design',
             description: 'User-centric design focused on modern design principles, ensuring accessibility, responsiveness, and brand consistency.',
+            className: 'ux'
         }
     ]
 
@@ -114,7 +150,7 @@ export default function Develop() {
                     <h2 className="mb-12 text-7xl lg:ml-5">Are you ready to < br className="hidden md:block"/> <span className="text-orange">&lt;open source of success&gt;</span></h2>
                 </div>
                 <div>
-                    <div className="flex flex-col md:flex-row gap-5 w-full mb-28">
+                    <div className="flex flex-col md:flex-row gap-5 w-full mb-28 overflow-hidden">
                         {services.map((service, index) => (
                             <CardServices key={index} {...service} />
                         ))} 
