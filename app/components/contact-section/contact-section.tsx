@@ -30,7 +30,7 @@ export default function ContactSection() {
             });
 
             tl
-            .from('.contact_container',{scale:10,opacity:0})
+            .from('.contact_container',{opacity:0})
             .from('.contact__text',{y:20,opacity:0,stagger:.5})
             .from('.icons li',{y:20,opacity:0,stagger:.5})
             .from('.contact-form',{x:200,opacity:0})
